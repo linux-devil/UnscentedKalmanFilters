@@ -1,4 +1,4 @@
-# UnscentedKalmanFilters
+# Unscented Kalman Filters
 
 ## Self-Driving Car Engineer Nanodegree Program
 
@@ -26,8 +26,7 @@ In this project, we will utilize a Kalman filter to estimate the state of a movi
 4. Run it: ./ExtendedKF
 
 # Contents of the repo
-
-src a directory with the project code:
+- SRC a directory with the project code:
 1. main.cpp - reads in data, calls a function to run the Kalman filter, calls a function to calculate RMSE
 2. ukf.cpp - the UKF filter itself, defines the predict function, the update function for lidar, and the update function for radar
 3. tools.cpp - a function to calculate RMSE
