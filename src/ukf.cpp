@@ -11,6 +11,7 @@ using std::vector;
  * Initializes Unscented Kalman filter
  */
 UKF::UKF() {
+  is_initialized_ = false;
   // if this is false, laser measurements will be ignored (except during init)
   use_laser_ = true;
 
@@ -62,11 +63,12 @@ UKF::UKF() {
 
   // state covariance matrix
   P_ = MatrixXd(n_x_,n_x_);
-  P_ << 1,0,0,0,0,
-        0,1,0,0,0,
-        0,0,1,0,0,
-        0,0,0,1,0,
-        0,0,0,0,1;
+  P_ = MatrixXd::Identity(5,5);
+  //P_ << 1,0,0,0,0,
+  //      0,1,0,0,0,
+  //      0,0,1,0,0,
+  //      0,0,0,1,0,
+  //      0,0,0,0,1;
   // Weight matrix
   weights_ = VectorXd(2*n_aug_ +1);
   double weight_0 = lambda_/(lambda_ + n_aug_);
